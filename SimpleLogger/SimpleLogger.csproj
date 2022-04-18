@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+    <IsPublishable>False</IsPublishable>
+    <DebugType>embedded</DebugType>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>X:\SimpleLogger.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+</Project>
