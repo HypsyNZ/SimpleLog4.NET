@@ -1,34 +1,74 @@
-# SimpleLogger.NET
+# SimpleLog4.NET - Log All The Things
+
+[![Nuget](https://img.shields.io/nuget/v/SimpleLog4.NET)](https://www.nuget.org/packages/SimpleLog4.NET)
 
 ```cs 
-using SimpleLogger;
+using SimpleLog4.NET;
 ```
 
-Create a new Log with Log Level Error
+Create a new `Log` with `LogLevel.Error`
 ``` cs
 Log Log = new(@"C:\loglevelError.txt");
 ```
 
-Create a new Log with Log Level Error that also logs to console
+Create a new `Log` with `LogLevel.Error` that also logs to `Console`
 ``` cs
 Log Log = new(@"C:\loglevelError.txt", true);
 ```
 
-Create a new Log with Log Level Information
+Create a new `Log` with `LogLevel.Information`
 ``` cs
 Log Log = new(@"C:\test.txt", logLevel: LogLevel.Information);
 ```
 
-Create a new Log and change the Date Format
+Create a new `Log` and change the `DateFormat`
 ``` cs
 Log Log  = new(@"C:\test.txt", dateFormat: "MM/dd/yyyy HH:mm:ss:fff");
 ```
 
-Write to the Log
-```cs
-Log.Write("Message", LogLevel.Critical);
+Create a new `Log` using a `Logger`
+``` cs
+Logger logger = new(@"C:\test.txt");
+Log Log = new(logger);
 ```
 
-Example output
-> [04/18/22 23:55:50:755] Message
 
+# Write to the Log
+
+```cs
+Log.Info("Info");
+Log.Warning("Warning");
+Log.Error("Message", ex);
+Log.Trace(ex);
+```
+
+# Examples
+
+Creating multiple loggers and logging a ridiculous amount of messages is Simple
+
+![Example](https://i.imgur.com/ywVvBbB.png)
+
+#### Example output
+```
+[04/19/22 19:40:30:950] Loading Settings
+[04/19/22 19:40:30:973] Timer WatchDog Started Successfully..
+[04/19/22 19:40:31:108] Loaded Exchange Informaiton from File
+[04/19/22 19:40:31:112] Initialized Commands
+[04/19/22 19:40:31:113] Loaded Deleted Order List..
+[04/19/22 19:40:31:130] Loaded Stored Orders from File
+[04/19/22 19:40:46:556] Are you Sure you want to Exit?
+[04/19/22 19:40:47:290] Shutting Down..
+[04/19/22 19:40:47:296] Storing Orders..
+```
+
+#### Example Exception
+
+```
+[04/19/22 19:40:31:272] BTNET Failed to Start, Exception:  | Exception: Could not find file 'C:\BNET\notes.txt'.| Trace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   at BTNET.VM.ViewModels.NotepadViewModel.LoadNotes() in C:\BinanceTrader.NET\VM\ViewModels\NotepadViewModel.cs:line 45
+   at BTNET.BVVM.MainContext..ctor() in C:\BinanceTrader.NET\BVVM\MainContext.cs:line 119| Inner: 
+```

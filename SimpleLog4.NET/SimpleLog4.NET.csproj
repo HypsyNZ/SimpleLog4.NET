@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <NeutralLanguage>en</NeutralLanguage>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <DebugType>embedded</DebugType>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+    <Authors>S Christison</Authors>
+    <Copyright>S Christison ©2022</Copyright>
+
+    <AssemblyName>SimpleLog4.NET</AssemblyName>
+    <Title>SimpleLog4.NET</Title>
+    <AssemblyVersion>1.0.5</AssemblyVersion>
+    <FileVersion>1.0.5</FileVersion>
+    <VersionPrefix>1.0.5</VersionPrefix>
+
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>X:\SimpleLogger.snk</AssemblyOriginatorKeyFile>
+
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/HypsyNZ/SimpleLog4.NET</RepositoryUrl>
+    <Description>A Very Simple Thread Safe Logger</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/HypsyNZ/SimpleLog4.NET</PackageProjectUrl>
+    <PackageTags>log, logging, logger, simple, thread, safe</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Deterministic>True</Deterministic>
+    <PackageReleaseNotes>https://github.com/HypsyNZ/SimpleLog4.NET/tree/master/SimpleLog4.NET</PackageReleaseNotes>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+</Project>
