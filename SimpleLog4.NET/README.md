@@ -1,3 +1,6 @@
+### Version 1.0.6
+- [x] Added the `LogLevel` to the output message, eg. `[Info]`
+
 ### Version 1.0.5
 - [x] Add Destructor to Logger
 - [x] Add Dispose to Logger
