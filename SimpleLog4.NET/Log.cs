@@ -10,10 +10,7 @@
 //
 //******************************************************************************************************
 
-using SimpleLog4.NET.Base;
 using System;
-using System.Collections.Concurrent;
-using System.Threading;
 
 namespace SimpleLog4.NET
 {
@@ -22,7 +19,7 @@ namespace SimpleLog4.NET
     /// </summary>
     public partial class Log
     {
-        Logger Logger;
+        private Logger Logger;
 
         /// <summary>
         /// A Simple Log using the Default Logger
@@ -34,7 +31,7 @@ namespace SimpleLog4.NET
         /// <param name="loggingInterval">How often the Logger should check for messages to write to the log</param>
         public Log(string path, bool logToConsole = false, string dateFormat = "MM/dd/yy HH:mm:ss:fff", LogLevel logLevel = LogLevel.Error, int loggingInterval = 100)
         {
-            Logger = new Logger(path, logToConsole, dateFormat, logLevel, loggingInterval);    
+            Logger = new Logger(path, logToConsole, dateFormat, logLevel, loggingInterval);
         }
 
         /// <summary>
@@ -60,7 +57,7 @@ namespace SimpleLog4.NET
         /// <param name="message"></param>
         public void Trace(string message)
         {
-            Logger.Write(message, LogLevel.Trace);
+            Logger.Write("[Trace] " + message, LogLevel.Trace);
         }
 
         /// <summary>
@@ -69,7 +66,7 @@ namespace SimpleLog4.NET
         /// <param name="message"></param>
         public void Debug(string message)
         {
-            Logger.Write(message, LogLevel.Debug);
+            Logger.Write("[Debug] " + message, LogLevel.Debug);
         }
 
         /// <summary>
@@ -78,7 +75,7 @@ namespace SimpleLog4.NET
         /// <param name="message"></param>
         public void Info(string message)
         {
-            Logger.Write(message, LogLevel.Information);
+            Logger.Write("[Info] " + message, LogLevel.Information);
         }
 
         /// <summary>
@@ -87,7 +84,7 @@ namespace SimpleLog4.NET
         /// <param name="message"></param>
         public void Warning(string message)
         {
-            Logger.Write(message, LogLevel.Warning);
+            Logger.Write("[Warn] " + message, LogLevel.Warning);
         }
 
         /// <summary>
@@ -96,7 +93,7 @@ namespace SimpleLog4.NET
         /// <param name="message"></param>
         public void Error(string message)
         {
-            Logger.Write(message, LogLevel.Error);
+            Logger.Write("[Error] " + message, LogLevel.Error);
         }
 
         /// <summary>
@@ -105,7 +102,7 @@ namespace SimpleLog4.NET
         /// <param name="message"></param>
         public void Critical(string message)
         {
-            Logger.Write(message, LogLevel.Critical);
+            Logger.Write("[Critical] " + message, LogLevel.Critical);
         }
 
         /// <summary>
@@ -114,7 +111,7 @@ namespace SimpleLog4.NET
         /// <param name="ex"></param>
         public void Trace(Exception ex)
         {
-            Logger.Write("| Exception: " + ex.Message + "" +
+            Logger.Write("[Trace] Exception: " + ex.Message + "" +
                 "| Trace: " + ex.StackTrace +
                 "| Inner: " + ex.InnerException, LogLevel.Trace);
         }
@@ -126,7 +123,7 @@ namespace SimpleLog4.NET
         /// <param name="ex"></param>
         public void Trace(string message, Exception ex)
         {
-            Logger.Write(message + " " +
+            Logger.Write("[Trace] " + message + " " +
                 "| Exception: " + ex.Message + "" +
                 "| Trace: " + ex.StackTrace +
                 "| Inner: " + ex.InnerException, LogLevel.Trace);
@@ -138,7 +135,7 @@ namespace SimpleLog4.NET
         /// <param name="ex"></param>
         public void Debug(Exception ex)
         {
-            Logger.Write("| Exception: " + ex.Message + "" +
+            Logger.Write("[Debug] Exception: " + ex.Message + "" +
                 "| Trace: " + ex.StackTrace +
                 "| Inner: " + ex.InnerException, LogLevel.Debug);
         }
@@ -150,7 +147,7 @@ namespace SimpleLog4.NET
         /// <param name="ex"></param>
         public void Debug(string message, Exception ex)
         {
-            Logger.Write(message + " " +
+            Logger.Write("[Debug] " + message + " " +
                 "| Exception: " + ex.Message + "" +
                 "| Trace: " + ex.StackTrace +
                 "| Inner: " + ex.InnerException, LogLevel.Debug);
@@ -162,7 +159,7 @@ namespace SimpleLog4.NET
         /// <param name="ex"></param>
         public void Error(Exception ex)
         {
-            Logger.Write("| Exception: " + ex.Message + "" +
+            Logger.Write("[Error] Exception: " + ex.Message + "" +
                 "| Trace: " + ex.StackTrace +
                 "| Inner: " + ex.InnerException, LogLevel.Error);
         }
@@ -174,7 +171,7 @@ namespace SimpleLog4.NET
         /// <param name="ex"></param>
         public void Error(string message, Exception ex)
         {
-            Logger.Write(message + " " +
+            Logger.Write("[Error] " + message + " " +
                 "| Exception: " + ex.Message + "" +
                 "| Trace: " + ex.StackTrace +
                 "| Inner: " + ex.InnerException, LogLevel.Error);
@@ -186,7 +183,7 @@ namespace SimpleLog4.NET
         /// <param name="ex"></param>
         public void Critical(Exception ex)
         {
-            Logger.Write("| Exception: " + ex.Message + "" +
+            Logger.Write("[Critical] Exception: " + ex.Message + "" +
                 "| Trace: " + ex.StackTrace +
                 "| Inner: " + ex.InnerException, LogLevel.Critical);
         }
@@ -198,7 +195,7 @@ namespace SimpleLog4.NET
         /// <param name="ex"></param>
         public void Critical(string message, Exception ex)
         {
-            Logger.Write(message + " " +
+            Logger.Write("[Critical] " + message + " " +
                 "| Exception: " + ex.Message + "" +
                 "| Trace: " + ex.StackTrace +
                 "| Inner: " + ex.InnerException, LogLevel.Critical);
@@ -224,8 +221,7 @@ namespace SimpleLog4.NET
         /// </summary>
         public void Dispose()
         {
-            Logger?.Dispose();  
+            Logger?.Dispose();
         }
-
     }
 }

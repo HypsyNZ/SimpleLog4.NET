@@ -59,7 +59,7 @@ namespace SimpleLog4.NET
         /// <para>The LogTimer starts after the first message is logged</para>
         /// <para>You can stop the LogTimer by calling Reset() or Dispose()</para>
         /// </summary>
-        public bool IsTimerRunning => TimerRunning;    
+        public bool IsTimerRunning => TimerRunning;
 
         /// <summary>
         /// The LogPath for this Logger

@@ -11,9 +11,9 @@
 
     <AssemblyName>SimpleLog4.NET</AssemblyName>
     <Title>SimpleLog4.NET</Title>
-    <AssemblyVersion>1.0.5</AssemblyVersion>
-    <FileVersion>1.0.5</FileVersion>
-    <VersionPrefix>1.0.5</VersionPrefix>
+    <AssemblyVersion>1.0.6</AssemblyVersion>
+    <FileVersion>1.0.6</FileVersion>
+    <VersionPrefix>1.0.6</VersionPrefix>
 
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>X:\SimpleLogger.snk</AssemblyOriginatorKeyFile>

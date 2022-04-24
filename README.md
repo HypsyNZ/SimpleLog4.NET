@@ -50,21 +50,21 @@ Creating multiple loggers and logging a ridiculous amount of messages is Simple
 
 #### Example output
 ```
-[04/19/22 19:40:30:950] Loading Settings
-[04/19/22 19:40:30:973] Timer WatchDog Started Successfully..
-[04/19/22 19:40:31:108] Loaded Exchange Informaiton from File
-[04/19/22 19:40:31:112] Initialized Commands
-[04/19/22 19:40:31:113] Loaded Deleted Order List..
-[04/19/22 19:40:31:130] Loaded Stored Orders from File
-[04/19/22 19:40:46:556] Are you Sure you want to Exit?
-[04/19/22 19:40:47:290] Shutting Down..
-[04/19/22 19:40:47:296] Storing Orders..
+[04/24/22 23:48:11:446][Info] Loading Settings
+[04/24/22 23:48:11:491][Info] Timer WatchDog Started Successfully..
+[04/24/22 23:48:11:612][Info] Loaded Exchange Informaiton from File
+[04/24/22 23:48:11:616][Info] Initialized Commands
+[04/24/22 23:48:11:617][Info] Loaded Deleted Order List..
+[04/24/22 23:48:11:630][Info] Loaded Stored Orders from File
+[04/24/22 23:48:11:844][Info] Selected Mode: Spot
+[04/24/22 23:48:13:387][Info] Updated Exchange Information..
+[04/24/22 23:48:14:511][Info] BTNET Started Successfully
 ```
 
 #### Example Exception
 
 ```
-[04/19/22 19:40:31:272] BTNET Failed to Start, Exception:  | Exception: Could not find file 'C:\BNET\notes.txt'.| Trace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+[04/19/22 19:40:31:272] BTNET Failed to Start, [Error] Exception:  | Exception: Could not find file 'C:\BNET\notes.txt'.| Trace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
    at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
    at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
    at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)

@@ -44,7 +44,7 @@ namespace SimpleLog4.NET.Base
         {
             Level = loglevel;
             LoggedDateTime = DateTime.Now;
-            Content = "[" + LoggedDateTime.ToString(dateFormat) + "] " + message;
+            Content = "[" + LoggedDateTime.ToString(dateFormat) + "]" + message;
         }
     }
 }
